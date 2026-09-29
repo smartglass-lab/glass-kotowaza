@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=600, height=600, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Meta Ray-Ban Display 用のことわざ学習アプリ。よく知られたことわざ・慣用句120件を収録。あなうめクイズ・意味クイズ・ずかん、まちがえた問題だけの「にがて」出題、日付で決まるきょうのことわざ。D-padとタップだけで遊べる。依存ライブラリなし・オフライン動作。">
+  <meta name="mrbd-web-app-capable" content="yes">
+  <title>グラスことわざ — Glass Kotowaza</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="hud">
+      <span id="hud-left">📜 グラスことわざ</span>
+      <span id="hud-right"></span>
+    </div>
+
+    <!-- タイトル -->
+    <div id="title" class="screen">
+      <div class="panel wide">
+        <div class="t-title">グラスことわざ</div>
+        <div class="t-sub" id="title-sub"></div>
+        <div class="menu-list" id="title-list"></div>
+      </div>
+    </div>
+
+    <!-- クイズ -->
+    <div id="quiz" class="screen hidden">
+      <div id="q-kind"></div>
+      <div id="q-box">
+        <div id="q-main"></div>
+        <div id="q-sub"></div>
+      </div>
+      <div id="q-mark"></div>
+      <div id="q-exp" class="hidden"></div>
+      <div class="menu-list" id="q-list"></div>
+      <div id="hint"></div>
+    </div>
+
+    <!-- ずかん -->
+    <div id="zukan" class="screen hidden">
+      <div id="z-card">
+        <div id="z-top"><span id="z-no"></span><span id="z-tag"></span></div>
+        <div id="z-main"></div>
+        <div id="z-yomi"></div>
+        <div id="z-mean"></div>
+        <div id="z-rel"></div>
+      </div>
+      <div id="z-hint"></div>
+    </div>
+
+    <!-- メニュー（クイズ中・結果・ずかん） -->
+    <div id="menu" class="screen hidden">
+      <div class="panel">
+        <div class="t-title small" id="menu-title"></div>
+        <div class="t-sub" id="menu-sub"></div>
+        <div class="menu-list" id="menu-list"></div>
+      </div>
+    </div>
+
+    <!-- つかいかた -->
+    <div id="howto" class="screen hidden">
+      <div class="panel wide">
+        <div class="t-title small">つかいかた</div>
+        <ul class="howto">
+          <li><b class="key">あなうめ</b>：「猫に□□」の□に入ることばを4つからえらぶ</li>
+          <li><b class="key">いみ</b>：ことわざ→意味、意味→ことわざの4択（まざって出る）</li>
+          <li><b class="key">↑↓</b> でえらんで <b class="key">タップ</b>。答えると読みと意味の解説が出る</li>
+          <li>まちがえた問題は<b class="ng">にがて</b>に入る。正解すると<b class="ok">こくふく</b>して外れる</li>
+          <li><b class="key">ずかん</b>：<b class="key">←→</b> でめくる、<b class="key">↑↓</b> で行（あ・か・さ…）をとぶ、タップでメニュー</li>
+          <li>正答率・連続正解・おぼえた数はこの端末に保存</li>
+        </ul>
+        <div class="menu-list" id="howto-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
